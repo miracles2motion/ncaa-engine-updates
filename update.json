@@ -1,10 +1,10 @@
 {
-  "versionCode": 9,
-  "versionName": "1.5.1",
+  "versionCode": 12,
+  "versionName": "1.6.0",
   "apkUrl": "https://raw.githubusercontent.com/miracles2motion/ncaa-engine-updates/main/app-release.apk",
-  "sha256": "d98d9821ce7f4db4f51cdc5dc9cae1a771c853a534c12a1108899f2a0e26a139",
+  "sha256": "26f0456f6680e6a1ce6d18b36b1bb5d71d8c569b38cf508dbfcec036d825cd84",
   "releaseNotes": "Latest successfully tested and signature-verified NCAA Engine build.",
-  "publishedAt": "2026-11-08T06:13:20.778026+00:00",
-  "sourceCommit": "78ff68d2c1085337a050b6334e5c3935c8147e89",
-  "buildRun": 20
+  "publishedAt": "2026-11-08T06:49:16.925625+00:00",
+  "sourceCommit": "2cb7c1465300eea5cfc470f85b063da437f6e466",
+  "buildRun": 23
 }
