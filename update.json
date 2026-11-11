@@ -1,10 +1,10 @@
 {
-  "versionCode": 30,
-  "versionName": "2.6.0",
+  "versionCode": 31,
+  "versionName": "2.6.1",
   "apkUrl": "https://raw.githubusercontent.com/miracles2motion/ncaa-engine-updates/main/app-release.apk",
-  "sha256": "349490ba13b15965d266759a37fb057583c12db620c9c7a03c74426a601f73c6",
+  "sha256": "cdeb3c90436cb38e2e283a0b6bd67270ddd34ad0508bdf4a8c121c5a9f3806c6",
   "releaseNotes": "Latest successfully tested and signature-verified CourtQuant build.",
-  "publishedAt": "2026-11-11T10:06:24.433266+00:00",
-  "sourceCommit": "bf4b090e6f34049b85de327fa0e76f81d9c63d1f",
-  "buildRun": 85
+  "publishedAt": "2026-11-11T11:17:18.469330+00:00",
+  "sourceCommit": "7f5edc6e7e5353dc206eaa039641c825b0d2e7e4",
+  "buildRun": 86
 }
