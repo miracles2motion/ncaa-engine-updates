@@ -1,14 +1,19 @@
 {
-  "versionCode": 50,
-  "versionName": "2.13.1",
+  "versionCode": 51,
+  "versionName": "2.13.2",
   "apkUrl": "https://raw.githubusercontent.com/miracles2motion/ncaa-engine-updates/main/app-release.apk",
-  "sha256": "e85ee24465d162549f68ddf64419940431f186da94ca855a747004d0bc7a75cc",
-  "releaseNotes": "Fixed\n• A game that has not been played can no longer be saved as finished. SportyBet reported one game as \"ended, 0–0\" eleven hours before its tip-off, and the app took it as the result. A final score is now refused when it gives a team 0 points, or when it arrives before, or within an hour of, the tip-off.\n• A game saved with such a score is repaired at the next score refresh: the false score is removed, the game waits again and gets its real score after it is played. The message after the refresh names every game this happened to.\n• A trial counts a game only after its tip-off has passed. The game that was counted too early goes back to \"waiting\" as soon as you open the trial.\n• When SportyBet keeps giving a false score for a game that has been played, ESPN is asked instead. This needs the results source \"SportyBet + ESPN Backup\" in Settings.\n\nNew\n• Check for update now only checks. When a new version is found you see what it brings: the fixes and features of every version you do not have yet, with the date and the download size.\n• The download starts when you tap \"Download and install\". When it is done the Android installer opens by itself, as before.",
-  "publishedAt": "2026-11-14T10:41:53.758520+00:00",
-  "sourceCommit": "217024e530b8092a188681494ca8c74d7b850775",
-  "buildRun": 178,
+  "sha256": "1a025ff9af0a9881ae6474b2dc7bcbc5aa55c0cb3236e237276bc98d6f1692c6",
+  "releaseNotes": "Fixed\n• The code pop-up and the code buttons no longer wait once the code exists. Until now, after SportyBet had answered, the app first recalculated every model card, both All-Star cards, every decision card and the match list, and captured the Betslip again. Only then did it open the pop-up and release the buttons. That is why a code could already stand in the Codes tab while its own button still said \"Working…\".\n• Now the pop-up opens and the code is on its card as soon as SportyBet has answered. The recalculation and the capture still happen, afterwards and in the background.\n• This holds for every code button in Analyze: Betslip, Models, Decisions, All-Star, pods and \"Generate all\". In \"Generate all\" each card shows its code as it arrives and the queue goes straight on to the next model.\n• Less is done before SportyBet is asked, too: the Betslip is no longer captured in front of the request, and the board of a game on a moved line is read once instead of twice.\n\nUnchanged\n• After a code appears the code buttons count down 3 seconds, as before.\n• A code is made for exactly the picks on the card, and a moved line is still checked against a fresh SportyBet board before the code is made. That check and the code itself take as long as SportyBet takes to answer.\n\nNew\n• Settings, \"Share startup diagnostics\": the report now lists how long each step around your last codes took, in milliseconds. If a code still feels slow, generate one, then share the report: it shows where the time went. It holds no picks and no codes.",
+  "publishedAt": "2026-11-14T12:23:22.051900+00:00",
+  "sourceCommit": "3f8b738e11adcd2cb38b1565f27d6b274657a67d",
+  "buildRun": 180,
   "apkSizeBytes": 2955424,
   "history": [
+    {
+      "versionCode": 51,
+      "versionName": "2.13.2",
+      "notes": "Fixed\n• The code pop-up and the code buttons no longer wait once the code exists. Until now, after SportyBet had answered, the app first recalculated every model card, both All-Star cards, every decision card and the match list, and captured the Betslip again. Only then did it open the pop-up and release the buttons. That is why a code could already stand in the Codes tab while its own button still said \"Working…\".\n• Now the pop-up opens and the code is on its card as soon as SportyBet has answered. The recalculation and the capture still happen, afterwards and in the background.\n• This holds for every code button in Analyze: Betslip, Models, Decisions, All-Star, pods and \"Generate all\". In \"Generate all\" each card shows its code as it arrives and the queue goes straight on to the next model.\n• Less is done before SportyBet is asked, too: the Betslip is no longer captured in front of the request, and the board of a game on a moved line is read once instead of twice.\n\nUnchanged\n• After a code appears the code buttons count down 3 seconds, as before.\n• A code is made for exactly the picks on the card, and a moved line is still checked against a fresh SportyBet board before the code is made. That check and the code itself take as long as SportyBet takes to answer.\n\nNew\n• Settings, \"Share startup diagnostics\": the report now lists how long each step around your last codes took, in milliseconds. If a code still feels slow, generate one, then share the report: it shows where the time went. It holds no picks and no codes."
+    },
     {
       "versionCode": 50,
       "versionName": "2.13.1",
