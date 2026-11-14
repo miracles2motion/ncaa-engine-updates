@@ -1,10 +1,28 @@
 {
-  "versionCode": 49,
-  "versionName": "2.13.0",
+  "versionCode": 50,
+  "versionName": "2.13.1",
   "apkUrl": "https://raw.githubusercontent.com/miracles2motion/ncaa-engine-updates/main/app-release.apk",
-  "sha256": "5e536f9d7373dea874f73ee5c0c01d4db40c939444fd9ecae02037dd0a517d5b",
-  "releaseNotes": "Latest successfully tested and signature-verified CourtQuant build.",
-  "publishedAt": "2026-11-14T09:31:17.182562+00:00",
-  "sourceCommit": "e3ea3d1889fff5925eed278ab8e190fc8fe70e1e",
-  "buildRun": 176
+  "sha256": "e85ee24465d162549f68ddf64419940431f186da94ca855a747004d0bc7a75cc",
+  "releaseNotes": "Fixed\n• A game that has not been played can no longer be saved as finished. SportyBet reported one game as \"ended, 0–0\" eleven hours before its tip-off, and the app took it as the result. A final score is now refused when it gives a team 0 points, or when it arrives before, or within an hour of, the tip-off.\n• A game saved with such a score is repaired at the next score refresh: the false score is removed, the game waits again and gets its real score after it is played. The message after the refresh names every game this happened to.\n• A trial counts a game only after its tip-off has passed. The game that was counted too early goes back to \"waiting\" as soon as you open the trial.\n• When SportyBet keeps giving a false score for a game that has been played, ESPN is asked instead. This needs the results source \"SportyBet + ESPN Backup\" in Settings.\n\nNew\n• Check for update now only checks. When a new version is found you see what it brings: the fixes and features of every version you do not have yet, with the date and the download size.\n• The download starts when you tap \"Download and install\". When it is done the Android installer opens by itself, as before.",
+  "publishedAt": "2026-11-14T10:41:53.758520+00:00",
+  "sourceCommit": "217024e530b8092a188681494ca8c74d7b850775",
+  "buildRun": 178,
+  "apkSizeBytes": 2955424,
+  "history": [
+    {
+      "versionCode": 50,
+      "versionName": "2.13.1",
+      "notes": "Fixed\n• A game that has not been played can no longer be saved as finished. SportyBet reported one game as \"ended, 0–0\" eleven hours before its tip-off, and the app took it as the result. A final score is now refused when it gives a team 0 points, or when it arrives before, or within an hour of, the tip-off.\n• A game saved with such a score is repaired at the next score refresh: the false score is removed, the game waits again and gets its real score after it is played. The message after the refresh names every game this happened to.\n• A trial counts a game only after its tip-off has passed. The game that was counted too early goes back to \"waiting\" as soon as you open the trial.\n• When SportyBet keeps giving a false score for a game that has been played, ESPN is asked instead. This needs the results source \"SportyBet + ESPN Backup\" in Settings.\n\nNew\n• Check for update now only checks. When a new version is found you see what it brings: the fixes and features of every version you do not have yet, with the date and the download size.\n• The download starts when you tap \"Download and install\". When it is done the Android installer opens by itself, as before."
+    },
+    {
+      "versionCode": 49,
+      "versionName": "2.13.0",
+      "notes": "New\n• The live trial, game by game: under a model's yellow trial text a link opens a page with the games that count, the games waiting for a final score and the games left out, and what both versions projected and picked in each.\n• A \"Trials\" page with every trial, and a \"Trial ended\" message when a trial reaches its verdict.\n• Training queue: one model trains at a time; others wait in line and start by themselves.\n• Scores for the games of a running trial are refreshed automatically (switch in Settings, \"Trial games\").\n• Longer AI answers on OpenAI-style and Anthropic providers.\n• SportyBet codes: no waiting time between codes.\n\nFixed\n• Every trial check is saved with its time; a failed check is shown instead of hidden.\n• A trial waits up to 36 hours for the score of an earlier game before it decides."
+    },
+    {
+      "versionCode": 48,
+      "versionName": "2.12.3",
+      "notes": "Fixed\n• AI answers that were cut off: the app now says so instead of failing without a reason.\n• When a provider refuses a request because of its quota, the provider's full message and the waiting time are shown.\n• Crash reports can be decoded for every published version."
+    }
+  ]
 }
