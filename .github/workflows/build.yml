@@ -1,0 +1,56 @@
+name: CourtQuant build
+
+on:
+  workflow_dispatch:
+    inputs:
+      what:
+        description: "What to build"
+        type: choice
+        default: auto
+        options:
+          - auto
+          - test-again
+          - publish-again
+  schedule:
+    - cron: "13,43 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: courtquant-build
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Start
+        id: start
+        env:
+          GH_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+        run: |
+          echo "A public build started. cpus $(nproc), memory $(free -m | awk '/Mem:/{print $2}') MB"
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::notice title=Trial::A public build runs. No token is stored yet, so nothing was fetched."
+            exit 0
+          fi
+          REF="$(gh api 'repos/miracles2motion/laughing-spork/pulls?state=open&sort=updated&direction=desc&per_page=1' --jq '.[0].head.sha // empty')"
+          echo "ref=${REF:-main}" >> "$GITHUB_OUTPUT"
+
+      - name: Fetch the recipe
+        if: steps.start.outputs.ref != ''
+        uses: actions/checkout@v4
+        with:
+          repository: miracles2motion/laughing-spork
+          ref: ${{ steps.start.outputs.ref }}
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
+          path: src
+
+      - name: Build
+        if: steps.start.outputs.ref != '' && hashFiles('src/.github/actions/public-build/action.yml') != ''
+        uses: ./src/.github/actions/public-build
+        with:
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
+          what: ${{ inputs.what || 'auto' }}
